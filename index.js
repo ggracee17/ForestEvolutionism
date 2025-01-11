@@ -1,5 +1,7 @@
-var button = document.getElementById("calculate");
-button.addEventListener("click", showWinner);
+var calculate_result = document.getElementById("calculate");
+calculate_result.addEventListener("click", showWinner);
+var confirm_players = document.getElementById("confirm_players");
+confirm_players.addEventListener("click", hidePlayers);
 
 function hidePlayers() {
     var player_number = document.getElementById("no_players").value;
