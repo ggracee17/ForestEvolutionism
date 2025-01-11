@@ -156,4 +156,3 @@ function showWinner() {
     
     console.log(document.getElementById(first_player_health).value, document.getElementById(second_player_health).value, round_health);
 }
-
