@@ -6,13 +6,13 @@ confirm_players.addEventListener("click", hidePlayers);
 function hidePlayers() {
     var player_number = document.getElementById("no_players").value;
     console.log(player_number);
-    document.querySelector('#player13_info').style.display = 'block';
-    document.querySelector('#player12_info').style.display = 'block';
-    document.querySelector('#player11_info').style.display = 'block';
-    document.querySelector('#player10_info').style.display = 'block';
-    document.querySelector('#player9_info').style.display = 'block';
-    document.querySelector('#player8_info').style.display = 'block';
-    document.querySelector('#player7_info').style.display = 'block';
+    document.querySelector('#player13_info').style.display = 'unset';
+    document.querySelector('#player12_info').style.display = 'unset';
+    document.querySelector('#player11_info').style.display = 'unset';
+    document.querySelector('#player10_info').style.display = 'unset';
+    document.querySelector('#player9_info').style.display = 'unset';
+    document.querySelector('#player8_info').style.display = 'unset';
+    document.querySelector('#player7_info').style.display = 'unset';
     if (player_number < 13) {
         document.querySelector('#player13_info').style.display = 'none';
         if (player_number < 12) {
