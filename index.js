@@ -145,12 +145,12 @@ function showWinner() {
         document.getElementById("winner").innerHTML = 'Please check that player identities are entered correctly';
     } else {
         if (winner == first_player) {
-            document.getElementById(first_player_health).innerHTML = health + round_health;
-            document.getElementById(second_player_health).innerHTML = health - round_health;
+            document.getElementById(first_player_health).innerHTML = health1 + round_health;
+            document.getElementById(second_player_health).innerHTML = health2 - round_health;
             document.getElementById("winner").innerHTML = 'Successful, player ' + winner + ' wins';
         } else {
-            document.getElementById(first_player_health).innerHTML = health - round_health;
-            document.getElementById(second_player_health).innerHTML = health + round_health;
+            document.getElementById(first_player_health).innerHTML = health1 - round_health;
+            document.getElementById(second_player_health).innerHTML = health2 + round_health;
             document.getElementById("winner").innerHTML = 'Failed, player ' + winner + ' wins';
         }
     }
