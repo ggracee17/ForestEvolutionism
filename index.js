@@ -54,6 +54,7 @@ function showWinner() {
     var winner = '';
     var round = document.getElementById("round").value;
     var player_number = document.getElementById("no_players").value;
+    var round_health = 0;
     console.log(round, player_number, first_player_name, first_player_health, second_player_name, second_player_health, card1, card2, letter1, letter2, suit1, suit2, health1, health2);
     
     if (letter1 == letter2) {
@@ -124,14 +125,32 @@ function showWinner() {
         winner = first_player;
     } 
 
+    if (round == 1) {
+        round_health = 2;
+    } else if (round == 2) {
+        round_health = 3;
+    } else if (round == 3) {
+        round_health = 4;
+    } else if (round == 4) {
+        round_health = 5;
+    } else if (round == 5) {
+        round_health = 6;
+    } else if (round == 6) {
+        round_health = 7;
+    }
+
     if (winner == 'tie') {
         document.getElementById("winner").innerHTML = 'Tie';
     } else if (winner == '') {
         document.getElementById("winner").innerHTML = 'Please check that player identities are entered correctly';
     } else {
         if (winner == first_player) {
+            document.getElementById(first_player_health).innerHTML = health + round_health;
+            document.getElementById(second_player_health).innerHTML = health - round_health;
             document.getElementById("winner").innerHTML = 'Successful, player ' + winner + ' wins';
         } else {
+            document.getElementById(first_player_health).innerHTML = health - round_health;
+            document.getElementById(second_player_health).innerHTML = health + round_health;
             document.getElementById("winner").innerHTML = 'Failed, player ' + winner + ' wins';
         }
     }
