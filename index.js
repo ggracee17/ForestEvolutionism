@@ -21,6 +21,39 @@ function showWinner() {
     var player_number = document.getElementById("no_players").value;
     console.log(round, player_number, first_player_name, first_player_health, second_player_name, second_player_health, card1, card2, letter1, letter2, suit1, suit2, health1, health2);
 
+    if (player_number < 13) {
+        document.querySelector('#player13').style.display = 'none';
+        document.querySelector('#health13').style.display = 'none';
+    }
+    if (player_number < 12) {
+        document.querySelector('#player12').style.display = 'none';
+        document.querySelector('#health12').style.display = 'none';
+    }
+    if (player_number < 11) {
+        document.querySelector('#player11').style.display = 'none';
+        document.querySelector('#health11').style.display = 'none';
+    }
+    if (player_number < 10) {
+        document.querySelector('#player10').style.display = 'none';
+        document.querySelector('#health10').style.display = 'none';
+    }
+    if (player_number < 9) {
+        document.querySelector('#player9').style.display = 'none';
+        document.querySelector('#health9').style.display = 'none';
+    }
+    if (player_number < 8) {
+        document.querySelector('#player8').style.display = 'none';
+        document.querySelector('#health8').style.display = 'none';
+    }
+    if (player_number < 7) {
+        document.querySelector('#player7').style.display = 'none';
+        document.querySelector('#health7').style.display = 'none';
+    }
+    if (player_number < 6) {
+        document.querySelector('#player6').style.display = 'none';
+        document.querySelector('#health6').style.display = 'none';
+    }
+    
     if (letter1 == letter2) {
         if (suit1 == 's' && suit2 == 'h') {
             winner = first_player;
@@ -70,7 +103,7 @@ function showWinner() {
     if (winner == 'tie') {
         document.getElementById("winner").innerHTML = 'Tie';
     } else if (winner == '') {
-        document.getElementById("winner").innerHTML = 'Please check that player identity is entered correctly';
+        document.getElementById("winner").innerHTML = 'Please check that player identities are entered correctly';
     } else {
         if (winner == first_player) {
             document.getElementById("winner").innerHTML = 'Successful, player ' + winner + ' wins';
