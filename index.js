@@ -16,15 +16,13 @@ function hidePlayers() {
     if (player_number < 13) {
         document.querySelector('#player13_info').style.display = 'none';
         if (player_number < 12) {
-            document.querySelector('#player13_info').style.display = 'none';
+            document.querySelector('#player12_info').style.display = 'none';
             if (player_number < 11) {
                 document.querySelector('#player11_info').style.display = 'none';
                 if (player_number < 10) {
                     document.querySelector('#player10_info').style.display = 'none';
                     if (player_number < 9) {
                         document.querySelector('#player9_info').style.display = 'none';
-                        document.querySelector('#player8_info').style.display = 'inline';
-                        document.querySelector('#player7_info').style.display = 'inline';
                         if (player_number < 8) {
                             document.querySelector('#player8_info').style.display = 'none';
                             if (player_number < 7) {
@@ -55,34 +53,57 @@ function showWinner() {
     var suit2 = card2[0];
     var winner = '';
     var round = document.getElementById("round").value;
-    console.log(round, first_player_name, first_player_health, second_player_name, second_player_health, card1, card2, letter1, letter2, suit1, suit2, health1, health2);
+    var player_number = document.getElementById("no_players").value;
+    console.log(round, player_number, first_player_name, first_player_health, second_player_name, second_player_health, card1, card2, letter1, letter2, suit1, suit2, health1, health2);
     
     if (letter1 == letter2) {
-        if (suit1 == 's' && suit2 == 'h') {
-            winner = first_player;
-        } else if (suit1 == 's' && suit2 == 'c') {
-            winner = 'tie';
-        } else if (suit1 == 's' && suit2 == 'd') {
-            winner = second_player;
-        } else if (suit1 == 'h' && suit2 == 's') {
-            winner = second_player;
-        } else if (suit1 == 'h' && suit2 == 'c') {
-            winner = first_player;
-        } else if (suit1 == 'h' && suit2 == 'd') {
-            winner = 'tie';
-        } else if (suit1 == 'c' && suit2 == 's') {
-            winner = 'tie';
-        } else if (suit1 == 'c' && suit2 == 'h') {
-            winner = second_player;
-        } else if (suit1 == 'c' && suit2 == 'd') {
-            winner = first_player;
-        } else if (suit1 == 'd' && suit2 == 's') {
-            winner = first_player;
-        } else if (suit1 == 'd' && suit2 == 'h') {
-            winner = 'tie';
-        } else if (suit1 == 'd' && suit2 == 'c') {
-            winner = second_player;
-        } 
+        if (player_number >= 12) {
+            if (suit1 == 's' && suit2 == 'h') {
+                winner = first_player;
+            } else if (suit1 == 's' && suit2 == 'c') {
+                winner = 'tie';
+            } else if (suit1 == 's' && suit2 == 'd') {
+                winner = second_player;
+            } else if (suit1 == 'h' && suit2 == 's') {
+                winner = second_player;
+            } else if (suit1 == 'h' && suit2 == 'c') {
+                winner = first_player;
+            } else if (suit1 == 'h' && suit2 == 'd') {
+                winner = 'tie';
+            } else if (suit1 == 'c' && suit2 == 's') {
+                winner = 'tie';
+            } else if (suit1 == 'c' && suit2 == 'h') {
+                winner = second_player;
+            } else if (suit1 == 'c' && suit2 == 'd') {
+                winner = first_player;
+            } else if (suit1 == 'd' && suit2 == 's') {
+                winner = first_player;
+            } else if (suit1 == 'd' && suit2 == 'h') {
+                winner = 'tie';
+            } else if (suit1 == 'd' && suit2 == 'c') {
+                winner = second_player;
+            } 
+        } else if (player_number >= 9) {
+            if (suit1 == 's' && suit2 == 'h') {
+                winner = first_player;
+            } else if (suit1 == 's' && suit2 == 'c') {
+                winner = second_player;
+            } else if (suit1 == 'h' && suit2 == 's') {
+                winner = second_player;
+            } else if (suit1 == 'h' && suit2 == 'c') {
+                winner = first_player;
+            } else if (suit1 == 'c' && suit2 == 's') {
+                winner = first_player;
+            } else if (suit1 == 'c' && suit2 == 'h') {
+                winner = second_player;
+            } 
+        } else if (player_number >= 6) {
+            if (suit1 == 's' && suit2 == 'h') {
+                winner = 'tie';
+            } else if (suit1 == 'h' && suit2 == 's') {
+                winner = 'tie';
+            } 
+        }
     } else {
         if (letter1 == 'K' && letter2 == 'Q') {
             winner = first_player;
