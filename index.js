@@ -1,25 +1,9 @@
 var button = document.getElementById("calculate");
 button.addEventListener("click", showWinner);
 
-function showWinner() {
-    var first_player = document.getElementById("first_player").value;
-    var first_player_name = "player" + first_player;
-    var first_player_health = "health" + first_player;
-    var card1 = document.getElementById(first_player_name).value;
-    var health1 = document.getElementById(first_player_health).value;
-    var letter1 = card1[card1.length-1];
-    var suit1 = card1[0];
-    var second_player = document.getElementById("second_player").value;
-    var second_player_name = "player" + second_player;
-    var second_player_health = "health" + second_player;
-    var card2 = document.getElementById(second_player_name).value;
-    var health2 = document.getElementById(second_player_health).value;
-    var letter2 = card2[card2.length-1];
-    var suit2 = card2[0];
-    var winner = '';
-    var round = document.getElementById("round").value;
+function hidePlayers() {
     var player_number = document.getElementById("no_players").value;
-    console.log(round, player_number, first_player_name, first_player_health, second_player_name, second_player_health, card1, card2, letter1, letter2, suit1, suit2, health1, health2);
+    console.log(player_number);
 
     if (player_number < 13) {
         document.querySelector('#player13').style.display = 'none';
@@ -53,6 +37,26 @@ function showWinner() {
         document.querySelector('#player6').style.display = 'none';
         document.querySelector('#health6').style.display = 'none';
     }
+}
+
+function showWinner() {
+    var first_player = document.getElementById("first_player").value;
+    var first_player_name = "player" + first_player;
+    var first_player_health = "health" + first_player;
+    var card1 = document.getElementById(first_player_name).value;
+    var health1 = document.getElementById(first_player_health).value;
+    var letter1 = card1[card1.length-1];
+    var suit1 = card1[0];
+    var second_player = document.getElementById("second_player").value;
+    var second_player_name = "player" + second_player;
+    var second_player_health = "health" + second_player;
+    var card2 = document.getElementById(second_player_name).value;
+    var health2 = document.getElementById(second_player_health).value;
+    var letter2 = card2[card2.length-1];
+    var suit2 = card2[0];
+    var winner = '';
+    var round = document.getElementById("round").value;
+    console.log(round, first_player_name, first_player_health, second_player_name, second_player_health, card1, card2, letter1, letter2, suit1, suit2, health1, health2);
     
     if (letter1 == letter2) {
         if (suit1 == 's' && suit2 == 'h') {
