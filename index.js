@@ -67,9 +67,9 @@ function showWinner() {
         document.getElementById("winner").innerHTML = 'Please check that player identity is entered correctly';
     } else {
         if (winner == first_player) {
-            document.getElementById("winner").innerHTML = 'Successful, player' + winner + 'wins';
+            document.getElementById("winner").innerHTML = 'Successful, player ' + winner + ' wins';
         } else {
-            document.getElementById("winner").innerHTML = 'Failed, player' + winner + 'wins';
+            document.getElementById("winner").innerHTML = 'Failed, player ' + winner + ' wins';
         }
     }
     
