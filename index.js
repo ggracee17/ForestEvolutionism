@@ -1,7 +1,5 @@
-var calculate_result = document.getElementById("calculate");
-calculate_result.addEventListener("click", showWinner);
-var confirm_players = document.getElementById("confirm_players");
-confirm_players.addEventListener("click", hidePlayers);
+document.getElementById("calculate").addEventListener("click", showWinner);
+document.getElementById("confirm_players").addEventListener("click", hidePlayers);
 
 function hidePlayers() {
     var player_number = document.getElementById("no_players").value;
@@ -39,23 +37,19 @@ function hidePlayers() {
 function showWinner() {
     var first_player = document.getElementById("first_player").value;
     var first_player_name = "player" + first_player;
-    var first_player_health = "health" + first_player;
     var card1 = document.getElementById(first_player_name).value;
-    var health1 = document.getElementById(first_player_health).value;
     var letter1 = card1[card1.length-1];
     var suit1 = card1[0];
     var second_player = document.getElementById("second_player").value;
     var second_player_name = "player" + second_player;
-    var second_player_health = "health" + second_player;
     var card2 = document.getElementById(second_player_name).value;
-    var health2 = document.getElementById(second_player_health).value;
     var letter2 = card2[card2.length-1];
     var suit2 = card2[0];
     var winner = '';
     var round = document.getElementById("round").value;
     var player_number = document.getElementById("no_players").value;
     var round_health = 0;
-    console.log(round, round_health, player_number, first_player_name, first_player_health, second_player_name, second_player_health, card1, card2, letter1, letter2, suit1, suit2, health1, health2);
+    console.log(round, player_number, first_player_name, second_player_name, card1, card2, letter1, letter2, suit1, suit2);
     
     if (letter1 == letter2) {
         if (player_number >= 12) {
@@ -126,17 +120,17 @@ function showWinner() {
     } 
 
     if (round == 1) {
-        round_health = 2;
+        round_health = 1;
     } else if (round == 2) {
-        round_health = 3;
+        round_health = 1.5;
     } else if (round == 3) {
-        round_health = 4;
+        round_health = 2;
     } else if (round == 4) {
-        round_health = 5;
+        round_health = 2.5;
     } else if (round == 5) {
-        round_health = 6;
+        round_health = 3;
     } else if (round == 6) {
-        round_health = 7;
+        round_health = 3.5;
     }
 
     if (winner == 'tie') {
@@ -144,17 +138,22 @@ function showWinner() {
     } else if (winner == '') {
         document.getElementById("winner").innerHTML = 'Please check that player identities are entered correctly';
     } else {
+        var first_player_health = "health" + first_player;
+        var second_player_health = "health" + second_player;
+        var health1 = parseFloat(document.getElementById(first_player_health).value);
+        var health2 = parseFloat(document.getElementById(second_player_health).value);
+        console.log(health1, health2);
         if (winner == first_player) {
-            health1 = health1 + round_health;
-            health2 = health2 - round_health;
+            document.getElementById(first_player_health).value = health1 + round_health;
+            document.getElementById(second_player_health).value = health2 - round_health;
             document.getElementById("winner").innerHTML = 'Successful, player ' + winner + ' wins';
         } else {
-            health1 = health1 - round_health;
-            health2 = health2 + round_health;
+            document.getElementById(first_player_health).value = health1 - round_health;
+            document.getElementById(second_player_health).value = health2 + round_health;
             document.getElementById("winner").innerHTML = 'Failed, player ' + winner + ' wins';
         }
     }
-    document.getElementById(first_player_health).value = health1;
-    document.getElementById(second_player_health).value = health2;
+    
+    console.log(document.getElementById(first_player_health).value, document.getElementById(second_player_health).value, round_health);
 }
 
