@@ -152,7 +152,7 @@ function showWinner() {
             document.getElementById(second_player_health).value = health2 + round_health;
             document.getElementById("winner").innerHTML = 'Failed, player ' + winner + ' wins';
         }
+        console.log(health1, health2);
     }
-    
     console.log(document.getElementById(first_player_health).value, document.getElementById(second_player_health).value, round_health);
 }
