@@ -6,27 +6,27 @@ confirm_players.addEventListener("click", hidePlayers);
 function hidePlayers() {
     var player_number = document.getElementById("no_players").value;
     console.log(player_number);
-    document.querySelector('#player13_info').style.display = 'unset';
-    document.querySelector('#player12_info').style.display = 'unset';
-    document.querySelector('#player11_info').style.display = 'unset';
-    document.querySelector('#player10_info').style.display = 'unset';
-    document.querySelector('#player9_info').style.display = 'unset';
-    document.querySelector('#player8_info').style.display = 'unset';
-    document.querySelector('#player7_info').style.display = 'unset';
+    document.querySelector('#player13_info').style.visibility = 'visible';
+    document.querySelector('#player12_info').style.visibility = 'visible';
+    document.querySelector('#player11_info').style.visibility = 'visible';
+    document.querySelector('#player10_info').style.visibility = 'visible';
+    document.querySelector('#player9_info').style.visibility = 'visible';
+    document.querySelector('#player8_info').style.visibility = 'visible';
+    document.querySelector('#player7_info').style.visibility = 'visible';
     if (player_number < 13) {
-        document.querySelector('#player13_info').style.display = 'none';
+        document.querySelector('#player13_info').style.visibility = 'hidden';
         if (player_number < 12) {
-            document.querySelector('#player12_info').style.display = 'none';
+            document.querySelector('#player12_info').style.visibility = 'hidden';
             if (player_number < 11) {
-                document.querySelector('#player11_info').style.display = 'none';
+                document.querySelector('#player11_info').style.visibility = 'hidden';
                 if (player_number < 10) {
-                    document.querySelector('#player10_info').style.display = 'none';
+                    document.querySelector('#player10_info').style.visibility = 'hidden';
                     if (player_number < 9) {
-                        document.querySelector('#player9_info').style.display = 'none';
+                        document.querySelector('#player9_info').style.visibility = 'hidden';
                         if (player_number < 8) {
-                            document.querySelector('#player8_info').style.display = 'none';
+                            document.querySelector('#player8_info').style.visibility = 'hidden';
                             if (player_number < 7) {
-                                document.querySelector('#player7_info').style.display = 'none';
+                                document.querySelector('#player7_info').style.visibility = 'hidden';
                             }
                         }
                     }
