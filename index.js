@@ -62,14 +62,14 @@ function showWinner() {
     } 
 
     if (winner == 'tie') {
-        document.getElementById("winner").innerHTML = '平手';
+        document.getElementById("winner").innerHTML = 'Tie';
     } else if (winner == '') {
-        document.getElementById("winner").innerHTML = '请检查玩家身份输入是否正确';
+        document.getElementById("winner").innerHTML = 'Please check that player identity is entered correctly';
     } else {
         if (winner == first_player) {
-            document.getElementById("winner").innerHTML = '捕食成功，' + winner + '号玩家获胜';
+            document.getElementById("winner").innerHTML = 'Successful, player' + winner + 'wins';
         } else {
-            document.getElementById("winner").innerHTML = '捕食失败，' + winner + '号玩家获胜';
+            document.getElementById("winner").innerHTML = 'Failed, player' + winner + 'wins';
         }
     }
     
