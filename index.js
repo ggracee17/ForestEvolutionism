@@ -66,7 +66,11 @@ function showWinner() {
     } else if (winner == '') {
         document.getElementById("winner").innerHTML = '请检查玩家身份输入是否正确';
     } else {
-        document.getElementById("winner").innerHTML = winner + '号玩家获胜';
+        if (winner == first_player) {
+            document.getElementById("winner").innerHTML = '捕食成功，' + winner + '号玩家获胜';
+        } else {
+            document.getElementById("winner").innerHTML = '捕食失败，' + winner + '号玩家获胜';
+        }
     }
     
 }
